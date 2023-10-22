@@ -1,0 +1,33 @@
+## Algorithm - Solving the Casino Slot Machine Game
+
+**Step 1:** Read the number of test cases, `T`, from the input file.
+
+**Step 2:** For each test case (for `t` from 1 to `T`):
+   - Read the number of slot machines, `N`, the final budget to be reached, `Bf`, and the initial budget available, `Bi`.
+   
+**Step 3:** For each slot machine (for `i` from 1 to `N`):
+   - Read the cost to play the `i`th slot machine, `Ci`, and the reward gained by playing the `i`th slot machine, `Ri`.
+   
+**Step 4:** Create a function `solveCase` that takes `N`, `Bf`, `Bi`, and an array of slot machines as parameters:
+   
+   a. Sort the slot machines in decreasing order of `(Ri - Ci)`. This ranking ensures we start with the most profitable machines.
+   
+   b. Initialize variables `ini` to `Bi` and `res` to 0. `ini` keeps track of your current budget, and `res` tracks the number of games played.
+   
+   c. While `ini` is less than `Bf`:
+   
+      i. Iterate through the sorted slot machines (from the most profitable to the least) to find the first machine you can afford (i.e., `Ci` is less than or equal to `ini`).
+      
+      ii. Play the first machine found and update `ini` by adding `(Ri - Ci)` to it, representing the change in your budget.
+      
+      iii. Increment `res` by 1, as you've played a game.
+      
+      iv. If you couldn't find a machine to play (i.e., you can't afford any more machines), exit the loop.
+   
+**Step 5:** Return `res`, which represents the minimum number of slot machine games played to reach the target budget `Bf`.
+
+**Step 6:** For each test case, call the `solveCase` function with the provided parameters and print the result in the format "Case #t: R", where `t` is the test case number, and `R` is the number of games required to reach `Bf`.
+
+**Step 7:** Repeat steps 2 to 6 for all test cases.
+
+**Step 8:** Close the input and output files.
