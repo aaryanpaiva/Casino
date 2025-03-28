@@ -8,6 +8,7 @@ public class Casino {
         BufferedWriter bout = new BufferedWriter(fout);
         PrintWriter pout = new PrintWriter(bout);
         int t = Integer.parseInt(in.readLine());
+        
 
         for (int i = 1; i <= t; i++) {
             String st = in.readLine();
@@ -15,6 +16,7 @@ public class Casino {
             int n = Integer.parseInt(str[0]);
             int bf = Integer.parseInt(str[1]);
             int bi = Integer.parseInt(str[2]);
+            
 
             int[][] slots = new int[n][2];
             for (int j = 0; j < n; j++) {
